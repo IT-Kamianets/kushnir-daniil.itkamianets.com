@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Danyil Kushnir — Frontend Developer portfolio and resume." />
+    <title>Danyil Kushnir — Frontend Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      :root { --ink:#f4f7f5; --muted:#99aaa4; --green:#b6ff55; --deep:#071612; --panel:#0d211a; --line:rgba(214,239,221,.18); }
+      * { box-sizing:border-box; }
+      html { scroll-behavior:smooth; }
+      body { margin:0; min-width:320px; background:var(--deep); color:var(--ink); font-family:Manrope,Arial,sans-serif; }
+      .shell { width:min(1180px, calc(100% - 48px)); margin:auto; }
+      .noise { position:fixed; inset:0; pointer-events:none; opacity:.04; z-index:3; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E"); }
+      nav { height:86px; display:flex; align-items:center; justify-content:space-between; position:relative; z-index:5; border-bottom:1px solid var(--line); }
+      .brand { font:500 13px 'DM Mono',monospace; letter-spacing:.04em; text-decoration:none; color:var(--ink); }
+      .brand span { color:var(--green); }
+      .nav-links { display:flex; gap:29px; list-style:none; margin:0; padding:0; }
+      .nav-links a { color:var(--muted); text-decoration:none; font-size:13px; font-weight:700; transition:color .2s; }
+      .nav-links a:hover { color:var(--green); }
+      .hero { min-height:650px; position:relative; display:grid; grid-template-columns:1.2fr .8fr; align-items:center; overflow:hidden; }
+      .hero:after { content:""; position:absolute; right:-120px; top:55px; width:520px; height:520px; border:1px solid var(--line); border-radius:50%; box-shadow:0 0 0 55px rgba(182,255,85,.025), 0 0 0 110px rgba(182,255,85,.02); }
+      .eyebrow, .section-label { color:var(--green); font:500 12px 'DM Mono',monospace; letter-spacing:.13em; text-transform:uppercase; }
+      .eyebrow:before { content:""; display:inline-block; width:30px; height:1px; background:currentColor; margin:0 10px 4px 0; }
+      h1 { max-width:760px; margin:22px 0 25px; font-size:clamp(51px,7vw,92px); line-height:.96; letter-spacing:-.07em; font-weight:800; }
+      h1 em { font-style:normal; color:var(--green); }
+      .intro { max-width:505px; color:var(--muted); font-size:17px; line-height:1.7; }
+      .contacts { display:flex; gap:23px; flex-wrap:wrap; margin-top:34px; }
+      .contacts a { color:var(--ink); text-decoration:none; font:500 12px 'DM Mono',monospace; border-bottom:1px solid rgba(182,255,85,.5); padding-bottom:5px; }
+      .portrait { justify-self:end; align-self:center; width:300px; height:370px; border:1px solid var(--line); background:linear-gradient(145deg,#173b2e,#0a1f19); position:relative; overflow:hidden; z-index:1; }
+      .portrait:before { content:"DK"; position:absolute; right:-23px; bottom:-47px; color:rgba(182,255,85,.14); font-size:171px; font-weight:800; letter-spacing:-.12em; }
+      .portrait:after { content:"frontend / 2026"; position:absolute; left:18px; top:20px; writing-mode:vertical-rl; color:var(--green); font:11px 'DM Mono',monospace; letter-spacing:.12em; }
+      .portrait-grid { position:absolute; inset:0; background:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px); background-size:42px 42px; mask-image:linear-gradient(to bottom,black,transparent); }
+      main { border-top:1px solid var(--line); }
+      section { padding:110px 0; border-bottom:1px solid var(--line); }
+      .section-head { display:grid; grid-template-columns:210px 1fr; gap:25px; }
+      h2 { margin:0; max-width:730px; font-size:clamp(30px,4vw,50px); letter-spacing:-.055em; line-height:1.08; }
+      .education { margin:47px 0 0 235px; padding:25px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); display:flex; justify-content:space-between; gap:25px; }
+      .education h3, .project h3 { margin:0 0 7px; font-size:18px; }
+      .education p, .project p { color:var(--muted); margin:0; font-size:14px; line-height:1.65; }
+      .year { color:var(--green); font:13px 'DM Mono',monospace; white-space:nowrap; }
+      .project { margin-left:235px; margin-top:50px; padding:38px; background:var(--panel); position:relative; overflow:hidden; }
+      .project:after { content:"01"; color:rgba(182,255,85,.1); position:absolute; right:25px; top:-30px; font:800 150px Manrope,sans-serif; }
+      .project > * { position:relative; z-index:1; }
+      .project-title { display:flex; justify-content:space-between; gap:15px; align-items:flex-start; }
+      .tag { color:var(--green); border:1px solid rgba(182,255,85,.45); padding:6px 9px; font:11px 'DM Mono',monospace; white-space:nowrap; }
+      .project ul { margin:24px 0 0; padding:0; list-style:none; display:grid; gap:12px; }
+      .project li { color:#d3ded8; padding-left:20px; font-size:14px; line-height:1.55; position:relative; }
+      .project li:before { content:"↗"; color:var(--green); position:absolute; left:0; }
+      .grid { margin-left:235px; margin-top:48px; display:grid; grid-template-columns:repeat(2,1fr); border-top:1px solid var(--line); border-left:1px solid var(--line); }
+      .grid article { min-height:190px; padding:26px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); }
+      .grid h3 { margin:0 0 17px; font-size:15px; }
+      .grid p { color:var(--muted); font-size:14px; line-height:1.7; margin:0; }
+      .skill-list { display:flex; gap:8px; flex-wrap:wrap; }
+      .skill-list span { padding:8px 10px; border:1px solid var(--line); color:#dce9e1; font:12px 'DM Mono',monospace; }
+      footer { padding:35px 0 48px; display:flex; justify-content:space-between; align-items:end; gap:20px; color:var(--muted); font:12px 'DM Mono',monospace; }
+      footer a { color:var(--green); text-decoration:none; }
+      @media (max-width:760px) { .shell { width:min(100% - 34px,1180px); } nav { height:70px; } .nav-links { display:none; } .hero { grid-template-columns:1fr; min-height:650px; padding:85px 0 70px; } .portrait { display:none; } .hero:after { width:360px; height:360px; right:-210px; top:210px; } .section-head { grid-template-columns:1fr; gap:17px; } section { padding:75px 0; } .education,.project,.grid { margin-left:0; } .education { margin-top:34px; flex-direction:column; } .project { padding:27px 22px; margin-top:35px; } .grid { margin-top:35px; grid-template-columns:1fr; } footer { align-items:flex-start; flex-direction:column; } }
+    </style>
+  </head>
+  <body>
+    <div class="noise"></div>
+    <div class="shell">
+      <nav>
+        <a class="brand" href="#top">DANYIL<span>/</span>KUSHNIR</a>
+        <ul class="nav-links"><li><a href="#about">About</a></li><li><a href="#work">Work</a></li><li><a href="#details">Details</a></li></ul>
+      </nav>
+      <header class="hero" id="top">
+        <div>
+          <div class="eyebrow">Frontend developer · Ukraine</div>
+          <h1>Building clear<br /><em>digital</em> experiences.</h1>
+          <p class="intro">JavaScript and Angular developer focused on interactive products that make complex ideas easier to understand.</p>
+          <div class="contacts"><a href="mailto:kn1b24.kushnir@kpnu.edu.ua">kn1b24.kushnir@kpnu.edu.ua</a><a href="https://github.com/Kushnir-Daniil" target="_blank" rel="noreferrer">GitHub ↗</a></div>
+        </div>
+        <div class="portrait" aria-hidden="true"><div class="portrait-grid"></div></div>
+      </header>
+    </div>
+    <main>
+      <section id="about"><div class="shell">
+        <div class="section-head"><div class="section-label">01 / About</div><h2>Curious about the systems behind the screen — and the people using them.</h2></div>
+        <div class="education"><div><h3>Computer Science, Bachelor’s degree</h3><p>Kamianets-Podilskyi Ivan Ohiienko National University<br />Specialty 122 · Third year</p></div><div class="year">EXPECTED 2028</div></div>
+      </div></section>
+      <section id="work"><div class="shell">
+        <div class="section-head"><div class="section-label">02 / Selected work</div><h2>Learning cybersecurity through decisions, not lectures.</h2></div>
+        <article class="project"><div class="project-title"><div><h3>Cyber Detective</h3><p>An educational cybersecurity app that combines an interactive game with quizzes.</p></div><span class="tag">ANGULAR</span></div><ul><li>Developing for mobile devices and browsers with Angular.</li><li>Designing scenarios around phishing emails, suspicious messages, unsafe links, and weak passwords.</li><li>Building task and quiz mechanics with answer choices and clear explanations.</li></ul></article>
+      </div></section>
+      <section id="details"><div class="shell">
+        <div class="section-head"><div class="section-label">03 / Toolkit</div><h2>Frontend craft, with a growing interest in cyber defense.</h2></div>
+        <div class="grid"><article><h3>Core skills</h3><div class="skill-list"><span>JavaScript</span><span>Angular</span><span>HTML / CSS</span><span>Git</span><span>GitHub</span></div></article><article><h3>Areas of study</h3><p>Cryptography, cybersecurity, and cyber defense — explored through independent study and practical projects.</p></article><article><h3>Research direction</h3><p>Bachelor’s thesis: a crypto-agile system implemented across several programming languages.</p></article><article><h3>Languages</h3><p>Ukrainian — native<br />English — A2</p></article></div>
+      </div></section>
+    </main>
+    <div class="shell"><footer><span>Kamianets-Podilskyi, Ukraine</span><a href="mailto:kn1b24.kushnir@kpnu.edu.ua">Let’s connect →</a><span>© 2026 Danyil Kushnir</span></footer></div>
+  </body>
+</html>
