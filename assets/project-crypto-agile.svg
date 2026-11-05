@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="100%" height="100%">
+  <defs>
+    <linearGradient id="caBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c231c"/>
+      <stop offset="100%" stop-color="#05120e"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="360" rx="16" fill="url(#caBg)" stroke="rgba(182, 255, 85, 0.25)" stroke-width="1.5"/>
+
+  <!-- Window Header -->
+  <rect width="600" height="42" rx="16" fill="#132c23"/>
+  <rect y="30" width="600" height="12" fill="#132c23"/>
+  <circle cx="25" cy="21" r="5" fill="#f87171"/>
+  <circle cx="43" cy="21" r="5" fill="#fbbf24"/>
+  <circle cx="61" cy="21" r="5" fill="#34d399"/>
+  <rect x="90" y="10" width="310" height="22" rx="6" fill="#091813"/>
+  <text x="105" y="25" font-family="'DM Mono', monospace" font-size="11" fill="#99aaa4">crypto-agile-engine // multi-lang core</text>
+  <rect x="490" y="10" width="90" height="22" rx="4" fill="rgba(52, 211, 153, 0.15)"/>
+  <text x="502" y="25" font-family="'DM Mono', monospace" font-size="10" font-weight="700" fill="#34d399">THESIS · R&amp;D</text>
+
+  <!-- Flow Diagram -->
+  <g transform="translate(30, 65)">
+    <!-- Stage 1: Incoming Payload -->
+    <rect x="0" y="20" width="145" height="110" rx="8" fill="#0b1e17" stroke="rgba(182,255,85,0.3)"/>
+    <text x="15" y="42" font-family="'DM Mono', monospace" font-size="11" fill="#b6ff55">01. INPUT DATA</text>
+    <text x="15" y="66" font-family="'Courier New', monospace" font-size="10" fill="#99aaa4">Plaintext buffer</text>
+    <text x="15" y="84" font-family="'Courier New', monospace" font-size="10" fill="#99aaa4">Algorithm: Dynamic</text>
+    <rect x="15" y="96" width="115" height="20" rx="4" fill="#143026"/>
+    <text x="22" y="110" font-family="'DM Mono', monospace" font-size="9" fill="#34d399">Policy: Post-Quantum</text>
+
+    <!-- Arrow 1 -->
+    <path d="M155 75 L185 75" stroke="#b6ff55" stroke-width="2" stroke-dasharray="4 3"/>
+    <polygon points="185,71 193,75 185,79" fill="#b6ff55"/>
+
+    <!-- Stage 2: Agile Cipher Switcher -->
+    <rect x="195" y="10" width="165" height="130" rx="8" fill="#102d23" stroke="#b6ff55" stroke-width="1.5"/>
+    <text x="210" y="34" font-family="'DM Mono', monospace" font-size="11" font-weight="700" fill="#b6ff55">02. CIPHER SWITCH</text>
+    <rect x="207" y="46" width="140" height="24" rx="4" fill="#081813"/>
+    <text x="215" y="62" font-family="'DM Mono', monospace" font-size="10" fill="#34d399">✓ Kyber / Dilithium</text>
+    <rect x="207" y="74" width="140" height="24" rx="4" fill="#081813"/>
+    <text x="215" y="90" font-family="'DM Mono', monospace" font-size="10" fill="#99aaa4">✓ AES-256-GCM</text>
+    <rect x="207" y="102" width="140" height="24" rx="4" fill="#081813"/>
+    <text x="215" y="118" font-family="'DM Mono', monospace" font-size="10" fill="#99aaa4">✓ ChaCha20-Poly1305</text>
+
+    <!-- Arrow 2 -->
+    <path d="M370 75 L400 75" stroke="#b6ff55" stroke-width="2" stroke-dasharray="4 3"/>
+    <polygon points="400,71 408,75 400,79" fill="#b6ff55"/>
+
+    <!-- Stage 3: Secure Verified Output -->
+    <rect x="410" y="20" width="130" height="110" rx="8" fill="#0b1e17" stroke="rgba(182,255,85,0.3)"/>
+    <text x="422" y="42" font-family="'DM Mono', monospace" font-size="11" fill="#b6ff55">03. OUTPUT</text>
+    <text x="422" y="66" font-family="'Courier New', monospace" font-size="10" fill="#99aaa4">Ciphertext pkg</text>
+    <text x="422" y="84" font-family="'Courier New', monospace" font-size="10" fill="#99aaa4">Signature valid</text>
+    <rect x="422" y="96" width="105" height="20" rx="4" fill="rgba(182,255,85,0.15)"/>
+    <text x="430" y="110" font-family="'DM Mono', monospace" font-size="9" font-weight="700" fill="#b6ff55">100% VERIFIED</text>
+  </g>
+
+  <!-- Lower Terminal / Metrics Bar -->
+  <g transform="translate(30, 225)">
+    <rect width="540" height="85" rx="8" fill="#081712" stroke="rgba(255,255,255,0.06)"/>
+    <text x="15" y="24" font-family="'DM Mono', monospace" font-size="11" fill="#b6ff55">$ ./benchmark-crypto-agility --target web-client</text>
+    <text x="15" y="46" font-family="'Courier New', monospace" font-size="11" fill="#34d399">[INFO] Interoperability test: TypeScript &lt;-&gt; Python runtime: PASS</text>
+    <text x="15" y="66" font-family="'Courier New', monospace" font-size="11" fill="#99aaa4">[INFO] Handshake latency: 1.42ms | Zero-downtime cipher migration: READY</text>
+  </g>
+</svg>

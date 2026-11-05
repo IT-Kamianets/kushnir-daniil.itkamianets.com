@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cdBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e231c"/>
+      <stop offset="100%" stop-color="#061410"/>
+    </linearGradient>
+    <linearGradient id="redAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#b91c1c"/>
+    </linearGradient>
+    <filter id="cdGlow">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feComposite in="SourceGraphic" in2="b" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Container -->
+  <rect width="600" height="360" rx="16" fill="url(#cdBg)" stroke="rgba(182, 255, 85, 0.25)" stroke-width="1.5"/>
+
+  <!-- Browser/App Window Bar -->
+  <rect width="600" height="42" rx="16" fill="#132c23"/>
+  <rect y="30" width="600" height="12" fill="#132c23"/>
+  <circle cx="25" cy="21" r="5" fill="#f87171"/>
+  <circle cx="43" cy="21" r="5" fill="#fbbf24"/>
+  <circle cx="61" cy="21" r="5" fill="#34d399"/>
+  <rect x="90" y="10" width="280" height="22" rx="6" fill="#091813"/>
+  <text x="105" y="25" font-family="'DM Mono', monospace" font-size="11" fill="#99aaa4">cyber-detective.app / simulator</text>
+  <rect x="500" y="10" width="80" height="22" rx="4" fill="rgba(182, 255, 85, 0.15)"/>
+  <text x="515" y="25" font-family="'DM Mono', monospace" font-size="10" font-weight="700" fill="#b6ff55">ANGULAR</text>
+
+  <!-- Game HUD / Header -->
+  <g transform="translate(30, 60)">
+    <text x="0" y="20" font-family="'Manrope', sans-serif" font-size="17" font-weight="800" fill="#f4f7f5">MISSION 03: Phishing Email Inspection</text>
+    <rect x="420" y="4" width="120" height="24" rx="12" fill="rgba(182, 255, 85, 0.1)"/>
+    <text x="435" y="20" font-family="'DM Mono', monospace" font-size="11" fill="#b6ff55">SCORE: 850 XP</text>
+  </g>
+
+  <!-- Interactive Phishing Email Card Mockup -->
+  <g transform="translate(30, 105)">
+    <!-- Email Box -->
+    <rect width="320" height="215" rx="10" fill="#081b15" stroke="rgba(255,255,255,0.08)"/>
+    <!-- Email Header -->
+    <rect width="320" height="38" rx="10" fill="#0f2920"/>
+    <text x="16" y="24" font-family="'DM Mono', monospace" font-size="11" fill="#b6ff55">From: security@bank-auth-verify.cc</text>
+    <rect x="250" y="8" width="55" height="20" rx="4" fill="url(#redAccent)"/>
+    <text x="256" y="22" font-family="'DM Mono', monospace" font-size="9" font-weight="700" fill="#ffffff">SUSPICIOUS</text>
+
+    <!-- Email Body lines -->
+    <text x="16" y="65" font-family="'Manrope', sans-serif" font-size="12" font-weight="700" fill="#f4f7f5">Urgent: Unusual sign-in attempt detected</text>
+    <text x="16" y="88" font-family="'Manrope', sans-serif" font-size="11" fill="#99aaa4">We detected a suspicious login to your online account.</text>
+    <text x="16" y="106" font-family="'Manrope', sans-serif" font-size="11" fill="#99aaa4">Please verify your credentials within 24 hours.</text>
+
+    <!-- Fake Link Button -->
+    <rect x="16" y="125" width="180" height="30" rx="6" fill="#1b3f32" stroke="#b6ff55" stroke-width="1"/>
+    <text x="30" y="144" font-family="'DM Mono', monospace" font-size="10" fill="#b6ff55">🔗 Verify Identity (Fake link)</text>
+
+    <!-- Inspection Alert -->
+    <rect x="16" y="170" width="288" height="32" rx="6" fill="rgba(239, 68, 68, 0.15)" stroke="rgba(239, 68, 68, 0.4)"/>
+    <text x="28" y="190" font-family="'DM Mono', monospace" font-size="10" fill="#fca5a5">⚠️ Analysis: Domain mismatch &amp; artificial urgency</text>
+  </g>
+
+  <!-- Quiz & Choice Sidebar Mockup -->
+  <g transform="translate(370, 105)">
+    <rect width="200" height="215" rx="10" fill="#081b15" stroke="rgba(255,255,255,0.08)"/>
+    <text x="15" y="26" font-family="'Manrope', sans-serif" font-size="12" font-weight="700" fill="#f4f7f5">Detective's Decision:</text>
+
+    <!-- Option A -->
+    <rect x="12" y="42" width="176" height="38" rx="6" fill="#102720" stroke="rgba(255,255,255,0.06)"/>
+    <text x="22" y="65" font-family="'Manrope', sans-serif" font-size="11" fill="#99aaa4">A) Click and reset password</text>
+
+    <!-- Option B (Correct) -->
+    <rect x="12" y="90" width="176" height="48" rx="6" fill="rgba(182, 255, 85, 0.12)" stroke="#b6ff55" stroke-width="1.2"/>
+    <text x="22" y="110" font-family="'Manrope', sans-serif" font-size="11" font-weight="700" fill="#b6ff55">B) Flag as Phishing attack</text>
+    <text x="22" y="127" font-family="'DM Mono', monospace" font-size="9" fill="#34d399">✓ Correct! +100 Security XP</text>
+
+    <!-- Option C -->
+    <rect x="12" y="148" width="176" height="38" rx="6" fill="#102720" stroke="rgba(255,255,255,0.06)"/>
+    <text x="22" y="171" font-family="'Manrope', sans-serif" font-size="11" fill="#99aaa4">C) Forward to colleagues</text>
+
+    <!-- Progress Indicator -->
+    <rect x="12" y="198" width="176" height="5" rx="2.5" fill="#132c23"/>
+    <rect x="12" y="198" width="120" height="5" rx="2.5" fill="#b6ff55"/>
+  </g>
+</svg>

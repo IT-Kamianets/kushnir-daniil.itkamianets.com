@@ -1,97 +1,1557 @@
 <!doctype html>
-<html lang="en">
+<html lang="uk" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Danyil Kushnir — Frontend Developer portfolio and resume." />
-    <title>Danyil Kushnir — Frontend Developer</title>
+    <title>Даниїл Кушнір — Frontend Developer &amp; Computer Science | Резюме та Портфоліо</title>
+    <meta name="description" content="Даниїл Кушнір — Frontend розробник (JavaScript, TypeScript, Angular) та студент спеціальності Комп'ютерні науки КПНУ. Портфоліо, резюме, проєкти з кібербезпеки." />
+    <meta name="author" content="Даниїл Кушнір" />
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kushnir-daniil.itkamianets.com/" />
+    <meta property="og:title" content="Даниїл Кушнір — Frontend Developer | Резюме та Проєкти" />
+    <meta property="og:description" content="JavaScript / TypeScript / Angular розробник з фокусом на кібербезпеку. Студент КПНУ ім. І. Огієнка." />
+    <meta property="og:image" content="https://kushnir-daniil.itkamianets.com/assets/avatar.svg" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
     <style>
-      :root { --ink:#f4f7f5; --muted:#99aaa4; --green:#b6ff55; --deep:#071612; --panel:#0d211a; --line:rgba(214,239,221,.18); }
-      * { box-sizing:border-box; }
-      html { scroll-behavior:smooth; }
-      body { margin:0; min-width:320px; background:var(--deep); color:var(--ink); font-family:Manrope,Arial,sans-serif; }
-      .shell { width:min(1180px, calc(100% - 48px)); margin:auto; }
-      .noise { position:fixed; inset:0; pointer-events:none; opacity:.04; z-index:3; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E"); }
-      nav { height:86px; display:flex; align-items:center; justify-content:space-between; position:relative; z-index:5; border-bottom:1px solid var(--line); }
-      .brand { font:500 13px 'DM Mono',monospace; letter-spacing:.04em; text-decoration:none; color:var(--ink); }
-      .brand span { color:var(--green); }
-      .nav-links { display:flex; gap:29px; list-style:none; margin:0; padding:0; }
-      .nav-links a { color:var(--muted); text-decoration:none; font-size:13px; font-weight:700; transition:color .2s; }
-      .nav-links a:hover { color:var(--green); }
-      .hero { min-height:650px; position:relative; display:grid; grid-template-columns:1.2fr .8fr; align-items:center; overflow:hidden; }
-      .hero:after { content:""; position:absolute; right:-120px; top:55px; width:520px; height:520px; border:1px solid var(--line); border-radius:50%; box-shadow:0 0 0 55px rgba(182,255,85,.025), 0 0 0 110px rgba(182,255,85,.02); }
-      .eyebrow, .section-label { color:var(--green); font:500 12px 'DM Mono',monospace; letter-spacing:.13em; text-transform:uppercase; }
-      .eyebrow:before { content:""; display:inline-block; width:30px; height:1px; background:currentColor; margin:0 10px 4px 0; }
-      h1 { max-width:760px; margin:22px 0 25px; font-size:clamp(51px,7vw,92px); line-height:.96; letter-spacing:-.07em; font-weight:800; }
-      h1 em { font-style:normal; color:var(--green); }
-      .intro { max-width:505px; color:var(--muted); font-size:17px; line-height:1.7; }
-      .contacts { display:flex; gap:23px; flex-wrap:wrap; margin-top:34px; }
-      .contacts a { color:var(--ink); text-decoration:none; font:500 12px 'DM Mono',monospace; border-bottom:1px solid rgba(182,255,85,.5); padding-bottom:5px; }
-      .portrait { justify-self:end; align-self:center; width:300px; height:370px; border:1px solid var(--line); background:linear-gradient(145deg,#173b2e,#0a1f19); position:relative; overflow:hidden; z-index:1; }
-      .portrait:before { content:"DK"; position:absolute; right:-23px; bottom:-47px; color:rgba(182,255,85,.14); font-size:171px; font-weight:800; letter-spacing:-.12em; }
-      .portrait:after { content:"frontend / 2026"; position:absolute; left:18px; top:20px; writing-mode:vertical-rl; color:var(--green); font:11px 'DM Mono',monospace; letter-spacing:.12em; }
-      .portrait-grid { position:absolute; inset:0; background:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px); background-size:42px 42px; mask-image:linear-gradient(to bottom,black,transparent); }
-      main { border-top:1px solid var(--line); }
-      section { padding:110px 0; border-bottom:1px solid var(--line); }
-      .section-head { display:grid; grid-template-columns:210px 1fr; gap:25px; }
-      h2 { margin:0; max-width:730px; font-size:clamp(30px,4vw,50px); letter-spacing:-.055em; line-height:1.08; }
-      .education { margin:47px 0 0 235px; padding:25px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); display:flex; justify-content:space-between; gap:25px; }
-      .education h3, .project h3 { margin:0 0 7px; font-size:18px; }
-      .education p, .project p { color:var(--muted); margin:0; font-size:14px; line-height:1.65; }
-      .year { color:var(--green); font:13px 'DM Mono',monospace; white-space:nowrap; }
-      .project { margin-left:235px; margin-top:50px; padding:38px; background:var(--panel); position:relative; overflow:hidden; }
-      .project:after { content:"01"; color:rgba(182,255,85,.1); position:absolute; right:25px; top:-30px; font:800 150px Manrope,sans-serif; }
-      .project > * { position:relative; z-index:1; }
-      .project-title { display:flex; justify-content:space-between; gap:15px; align-items:flex-start; }
-      .tag { color:var(--green); border:1px solid rgba(182,255,85,.45); padding:6px 9px; font:11px 'DM Mono',monospace; white-space:nowrap; }
-      .project ul { margin:24px 0 0; padding:0; list-style:none; display:grid; gap:12px; }
-      .project li { color:#d3ded8; padding-left:20px; font-size:14px; line-height:1.55; position:relative; }
-      .project li:before { content:"↗"; color:var(--green); position:absolute; left:0; }
-      .grid { margin-left:235px; margin-top:48px; display:grid; grid-template-columns:repeat(2,1fr); border-top:1px solid var(--line); border-left:1px solid var(--line); }
-      .grid article { min-height:190px; padding:26px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); }
-      .grid h3 { margin:0 0 17px; font-size:15px; }
-      .grid p { color:var(--muted); font-size:14px; line-height:1.7; margin:0; }
-      .skill-list { display:flex; gap:8px; flex-wrap:wrap; }
-      .skill-list span { padding:8px 10px; border:1px solid var(--line); color:#dce9e1; font:12px 'DM Mono',monospace; }
-      footer { padding:35px 0 48px; display:flex; justify-content:space-between; align-items:end; gap:20px; color:var(--muted); font:12px 'DM Mono',monospace; }
-      footer a { color:var(--green); text-decoration:none; }
-      @media (max-width:760px) { .shell { width:min(100% - 34px,1180px); } nav { height:70px; } .nav-links { display:none; } .hero { grid-template-columns:1fr; min-height:650px; padding:85px 0 70px; } .portrait { display:none; } .hero:after { width:360px; height:360px; right:-210px; top:210px; } .section-head { grid-template-columns:1fr; gap:17px; } section { padding:75px 0; } .education,.project,.grid { margin-left:0; } .education { margin-top:34px; flex-direction:column; } .project { padding:27px 22px; margin-top:35px; } .grid { margin-top:35px; grid-template-columns:1fr; } footer { align-items:flex-start; flex-direction:column; } }
+      :root {
+        --ink: #f4f7f5;
+        --ink-pure: #ffffff;
+        --muted: #99aaa4;
+        --muted-light: #c8d6d0;
+        --green: #b6ff55;
+        --green-hover: #cbff80;
+        --green-dim: rgba(182, 255, 85, 0.12);
+        --green-border: rgba(182, 255, 85, 0.35);
+        --deep: #071612;
+        --panel: #0d211a;
+        --panel-elevated: #112a21;
+        --panel-hover: #16362b;
+        --line: rgba(214, 239, 221, 0.16);
+        --line-strong: rgba(214, 239, 221, 0.28);
+        --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        --font-mono: 'DM Mono', monospace;
+        --radius: 12px;
+        --transition: all 0.22s ease-in-out;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        min-width: 320px;
+        background: var(--deep);
+        color: var(--ink);
+        font-family: var(--font-sans);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* Subtle Noise Texture */
+      .noise {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.035;
+        z-index: 99;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+      }
+
+      .shell {
+        width: min(1180px, calc(100% - 48px));
+        margin: auto;
+      }
+
+      /* Navbar */
+      nav {
+        height: 86px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        z-index: 20;
+        border-bottom: 1px solid var(--line);
+      }
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font: 600 14px var(--font-mono);
+        letter-spacing: 0.04em;
+        text-decoration: none;
+        color: var(--ink);
+      }
+      .brand-badge {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        background: var(--panel-elevated);
+        border: 1px solid var(--green-border);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        color: var(--green);
+        font-weight: 700;
+      }
+      .brand span { color: var(--green); }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 26px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .nav-links a {
+        color: var(--muted);
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 600;
+        transition: var(--transition);
+      }
+      .nav-links a:hover { color: var(--green); }
+
+      /* Action controls in Nav */
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .lang-switch {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        color: var(--ink);
+        border-radius: 20px;
+        padding: 6px 12px;
+        font: 500 12px var(--font-mono);
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: var(--transition);
+      }
+      .lang-switch:hover {
+        border-color: var(--green);
+        color: var(--green);
+      }
+      .lang-switch .active {
+        color: var(--green);
+        font-weight: 700;
+      }
+
+      .btn-cv-print {
+        background: var(--green-dim);
+        border: 1px solid var(--green-border);
+        color: var(--green);
+        border-radius: 20px;
+        padding: 7px 15px;
+        font: 600 12px var(--font-mono);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+      .btn-cv-print:hover {
+        background: var(--green);
+        color: var(--deep);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 14px rgba(182, 255, 85, 0.25);
+      }
+
+      /* Hero Section */
+      .hero {
+        min-height: 640px;
+        position: relative;
+        display: grid;
+        grid-template-columns: 1.25fr 0.85fr;
+        align-items: center;
+        gap: 48px;
+        padding: 50px 0 70px;
+        overflow: hidden;
+      }
+      .hero:after {
+        content: "";
+        position: absolute;
+        right: -100px;
+        top: 40px;
+        width: 540px;
+        height: 540px;
+        border: 1px solid var(--line);
+        border-radius: 50%;
+        box-shadow: 0 0 0 60px rgba(182,255,85,.02), 0 0 0 120px rgba(182,255,85,.015);
+        pointer-events: none;
+        z-index: 0;
+      }
+      .hero-left {
+        position: relative;
+        z-index: 2;
+      }
+      .status-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 14px;
+        border-radius: 20px;
+        background: var(--panel-elevated);
+        border: 1px solid var(--green-border);
+        font: 500 12px var(--font-mono);
+        color: var(--green);
+        letter-spacing: 0.04em;
+        margin-bottom: 20px;
+      }
+      .status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--green);
+        box-shadow: 0 0 8px var(--green);
+        animation: pulseDot 2s infinite ease-in-out;
+      }
+      @keyframes pulseDot {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.5; transform: scale(0.85); }
+      }
+
+      h1 {
+        max-width: 760px;
+        margin: 0 0 24px;
+        font-size: clamp(38px, 5.5vw, 68px);
+        line-height: 1.05;
+        letter-spacing: -0.05em;
+        font-weight: 800;
+        color: var(--ink-pure);
+      }
+      h1 em {
+        font-style: normal;
+        color: var(--green);
+        position: relative;
+      }
+      .hero-role {
+        display: block;
+        font-size: clamp(20px, 2.5vw, 28px);
+        font-weight: 600;
+        color: var(--muted-light);
+        margin-bottom: 12px;
+        letter-spacing: -0.02em;
+      }
+
+      .intro {
+        max-width: 580px;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.7;
+        margin: 0 0 30px;
+      }
+      .intro strong {
+        color: var(--ink);
+        font-weight: 600;
+      }
+
+      /* Hero Stats Row */
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        gap: 20px;
+        margin: 28px 0;
+        padding: 18px 22px;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        width: fit-content;
+      }
+      .stat-item {
+        display: flex;
+        flex-direction: column;
+      }
+      .stat-value {
+        font: 700 17px var(--font-mono);
+        color: var(--green);
+      }
+      .stat-label {
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      /* Hero Action Buttons */
+      .hero-cta {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 14px;
+        margin-top: 32px;
+      }
+      .btn-primary {
+        background: var(--green);
+        color: var(--deep);
+        padding: 13px 24px;
+        border-radius: 8px;
+        text-decoration: none;
+        font: 700 13px var(--font-mono);
+        letter-spacing: 0.02em;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: var(--transition);
+        border: none;
+        cursor: pointer;
+      }
+      .btn-primary:hover {
+        background: var(--green-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 18px rgba(182, 255, 85, 0.3);
+      }
+      .btn-secondary {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        color: var(--ink);
+        padding: 12px 20px;
+        border-radius: 8px;
+        text-decoration: none;
+        font: 600 13px var(--font-mono);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: var(--transition);
+        cursor: pointer;
+      }
+      .btn-secondary:hover {
+        border-color: var(--green-border);
+        color: var(--green);
+        background: var(--panel-elevated);
+      }
+      .copy-email-btn {
+        background: transparent;
+        border: 1px dashed var(--line-strong);
+        color: var(--muted-light);
+        padding: 11px 16px;
+        border-radius: 8px;
+        font: 500 12px var(--font-mono);
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: var(--transition);
+      }
+      .copy-email-btn:hover {
+        border-color: var(--green);
+        color: var(--green);
+      }
+
+      /* Hero Right: Portrait & Visual Card */
+      .hero-right {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .portrait-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 380px;
+      }
+      .portrait-card {
+        width: 100%;
+        background: var(--panel);
+        border: 1px solid var(--green-border);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(182, 255, 85, 0.1);
+        position: relative;
+        transition: var(--transition);
+      }
+      .portrait-card:hover {
+        border-color: var(--green);
+        transform: translateY(-4px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 25px rgba(182, 255, 85, 0.2);
+      }
+      .portrait-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+        background: var(--panel-elevated);
+      }
+      .portrait-caption {
+        padding: 18px 20px;
+        border-top: 1px solid var(--line);
+        background: var(--panel-elevated);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .portrait-name {
+        font: 700 15px var(--font-sans);
+        color: var(--ink-pure);
+      }
+      .portrait-sub {
+        font: 500 11px var(--font-mono);
+        color: var(--muted);
+      }
+      .portrait-badge {
+        font: 700 11px var(--font-mono);
+        color: var(--green);
+        background: var(--green-dim);
+        border: 1px solid var(--green-border);
+        padding: 4px 8px;
+        border-radius: 6px;
+      }
+
+      /* Floating tech chips over portrait */
+      .floating-tag {
+        position: absolute;
+        background: rgba(13, 33, 26, 0.95);
+        backdrop-filter: blur(10px);
+        border: 1px solid var(--green-border);
+        padding: 8px 14px;
+        border-radius: 30px;
+        font: 600 11px var(--font-mono);
+        color: var(--ink-pure);
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+        z-index: 3;
+        transition: var(--transition);
+      }
+      .floating-tag:hover {
+        border-color: var(--green);
+        transform: scale(1.05);
+      }
+      .floating-tag.tag-top-left {
+        top: -12px;
+        left: -12px;
+      }
+      .floating-tag.tag-bottom-right {
+        bottom: 50px;
+        right: -15px;
+      }
+
+      /* Main Sections */
+      main { border-top: 1px solid var(--line); }
+      section {
+        padding: 95px 0;
+        border-bottom: 1px solid var(--line);
+        position: relative;
+      }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: 220px 1fr;
+        gap: 30px;
+        margin-bottom: 45px;
+      }
+      .section-label {
+        color: var(--green);
+        font: 600 13px var(--font-mono);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .section-label:before {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 2px;
+        background: var(--green);
+      }
+      h2 {
+        margin: 0;
+        font-size: clamp(28px, 4vw, 44px);
+        letter-spacing: -0.04em;
+        line-height: 1.15;
+        color: var(--ink-pure);
+      }
+      .section-desc {
+        color: var(--muted);
+        font-size: 16px;
+        max-width: 650px;
+        margin-top: 10px;
+        line-height: 1.6;
+      }
+
+      /* Section Content Offset */
+      .section-body {
+        margin-left: 250px;
+      }
+
+      /* About & Education Cards */
+      .bio-card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 32px;
+        margin-bottom: 25px;
+      }
+      .bio-card p {
+        margin: 0 0 16px;
+        color: var(--muted-light);
+        font-size: 15px;
+        line-height: 1.7;
+      }
+      .bio-card p:last-child { margin-bottom: 0; }
+
+      .edu-card {
+        background: var(--panel-elevated);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 28px 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 24px;
+        margin-top: 20px;
+        transition: var(--transition);
+      }
+      .edu-card:hover {
+        border-color: var(--green-border);
+      }
+      .edu-title {
+        font-size: 19px;
+        font-weight: 700;
+        color: var(--ink-pure);
+        margin: 0 0 6px;
+      }
+      .edu-uni {
+        font-size: 15px;
+        color: var(--green);
+        margin: 0 0 6px;
+        font-weight: 600;
+      }
+      .edu-details {
+        font-size: 14px;
+        color: var(--muted);
+        margin: 0 0 12px;
+      }
+      .edu-courses {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 10px;
+      }
+      .edu-course-chip {
+        background: rgba(0, 0, 0, 0.25);
+        border: 1px solid var(--line);
+        color: var(--muted-light);
+        padding: 4px 9px;
+        border-radius: 4px;
+        font: 11px var(--font-mono);
+      }
+      .edu-year {
+        color: var(--green);
+        font: 700 13px var(--font-mono);
+        white-space: nowrap;
+        background: var(--green-dim);
+        border: 1px solid var(--green-border);
+        padding: 6px 12px;
+        border-radius: 20px;
+      }
+
+      /* Projects / Work Section */
+      .project-card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        overflow: hidden;
+        margin-bottom: 35px;
+        transition: var(--transition);
+        position: relative;
+      }
+      .project-card:hover {
+        border-color: var(--green-border);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+      }
+      .project-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: stretch;
+      }
+      .project-visual {
+        background: var(--deep);
+        border-right: 1px solid var(--line);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        padding: 24px;
+      }
+      .project-visual img {
+        width: 100%;
+        max-width: 520px;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+        transition: var(--transition);
+      }
+      .project-card:hover .project-visual img {
+        transform: scale(1.02);
+      }
+      .project-content {
+        padding: 34px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .project-header-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+      }
+      .project-meta-tag {
+        font: 700 11px var(--font-mono);
+        color: var(--green);
+        background: var(--green-dim);
+        border: 1px solid var(--green-border);
+        padding: 4px 10px;
+        border-radius: 4px;
+      }
+      .project-title {
+        font-size: 24px;
+        font-weight: 800;
+        margin: 0 0 10px;
+        color: var(--ink-pure);
+      }
+      .project-description {
+        font-size: 14.5px;
+        color: var(--muted);
+        line-height: 1.65;
+        margin: 0 0 20px;
+      }
+      .project-features {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 24px;
+        display: grid;
+        gap: 10px;
+      }
+      .project-features li {
+        color: var(--muted-light);
+        font-size: 13.5px;
+        line-height: 1.55;
+        position: relative;
+        padding-left: 22px;
+      }
+      .project-features li:before {
+        content: "▹";
+        color: var(--green);
+        position: absolute;
+        left: 0;
+        font-size: 14px;
+      }
+      .project-tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 24px;
+      }
+      .tech-pill {
+        background: var(--panel-elevated);
+        border: 1px solid var(--line);
+        color: var(--ink);
+        padding: 5px 10px;
+        border-radius: 4px;
+        font: 500 11px var(--font-mono);
+      }
+      .project-links {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .project-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font: 600 12px var(--font-mono);
+        color: var(--ink-pure);
+        text-decoration: none;
+        border-bottom: 1px solid var(--green);
+        padding-bottom: 4px;
+        transition: var(--transition);
+      }
+      .project-btn:hover {
+        color: var(--green);
+        transform: translateX(3px);
+      }
+
+      /* Skills Section Grid */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      .skill-card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 28px;
+        transition: var(--transition);
+      }
+      .skill-card:hover {
+        border-color: var(--green-border);
+        background: var(--panel-elevated);
+      }
+      .skill-card-head {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+      .skill-icon {
+        font-size: 20px;
+      }
+      .skill-card h3 {
+        margin: 0;
+        font-size: 17px;
+        font-weight: 700;
+        color: var(--ink-pure);
+      }
+      .skill-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .skill-pill {
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid var(--line);
+        color: var(--ink);
+        padding: 7px 12px;
+        border-radius: 6px;
+        font: 500 12px var(--font-mono);
+        transition: var(--transition);
+      }
+      .skill-pill:hover {
+        border-color: var(--green);
+        color: var(--green);
+        background: var(--green-dim);
+      }
+      .skill-card p {
+        margin: 0;
+        font-size: 14px;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      /* Contact / Connect Section */
+      .connect-box {
+        background: linear-gradient(145deg, #0f2b21, #081a14);
+        border: 1px solid var(--green-border);
+        border-radius: var(--radius);
+        padding: 45px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+      }
+      .connect-info h3 {
+        margin: 0 0 10px;
+        font-size: 26px;
+        font-weight: 800;
+        color: var(--ink-pure);
+      }
+      .connect-info p {
+        margin: 0;
+        color: var(--muted-light);
+        font-size: 15px;
+        max-width: 500px;
+      }
+      .connect-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      /* Footer */
+      footer {
+        padding: 40px 0 55px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        color: var(--muted);
+        font: 500 12px var(--font-mono);
+        border-top: 1px solid var(--line);
+      }
+      footer a {
+        color: var(--green);
+        text-decoration: none;
+      }
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* Copy Toast Notification */
+      #toast {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        background: var(--green);
+        color: var(--deep);
+        padding: 12px 20px;
+        border-radius: 8px;
+        font: 700 13px var(--font-mono);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(12px);
+        transition: opacity 0.25s ease, transform 0.25s ease;
+      }
+      #toast.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Mobile Navigation Menu */
+      .mobile-menu-btn {
+        display: none;
+        background: transparent;
+        border: 1px solid var(--line);
+        color: var(--ink);
+        padding: 8px 12px;
+        border-radius: 6px;
+        font: 16px var(--font-mono);
+        cursor: pointer;
+      }
+
+      /* Bilingual Content Toggle */
+      [lang="en"] .lang-ua { display: none !important; }
+      [lang="uk"] .lang-en { display: none !important; }
+
+      /* Responsive Breakpoints */
+      @media (max-width: 960px) {
+        .hero {
+          grid-template-columns: 1fr;
+          gap: 40px;
+          padding: 40px 0 60px;
+        }
+        .hero-right {
+          order: -1;
+        }
+        .portrait-wrapper {
+          max-width: 320px;
+          margin: auto;
+        }
+        .project-grid {
+          grid-template-columns: 1fr;
+        }
+        .project-visual {
+          border-right: none;
+          border-bottom: 1px solid var(--line);
+        }
+        .section-head {
+          grid-template-columns: 1fr;
+          gap: 15px;
+          margin-bottom: 30px;
+        }
+        .section-body {
+          margin-left: 0;
+        }
+        .connect-box {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 30px 24px;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .shell {
+          width: calc(100% - 32px);
+        }
+        nav { height: 72px; }
+        .nav-links { display: none; }
+        .hero-stats {
+          grid-template-columns: 1fr;
+          width: 100%;
+        }
+        .skills-grid {
+          grid-template-columns: 1fr;
+        }
+        .edu-card {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 22px;
+        }
+        .floating-tag { display: none; }
+      }
+
+      /* Print Stylesheet for CV / Resume */
+      @media print {
+        body {
+          background: #ffffff !important;
+          color: #000000 !important;
+          font-family: Arial, sans-serif !important;
+          font-size: 11pt !important;
+        }
+        .noise, nav, .hero:after, .hero-cta, .project-links, .lang-switch, .btn-cv-print, #toast, footer, .status-pill, .floating-tag {
+          display: none !important;
+        }
+        .shell {
+          width: 100% !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+        .hero {
+          min-height: auto !important;
+          padding: 0 0 20px !important;
+          display: block !important;
+        }
+        h1 {
+          font-size: 22pt !important;
+          color: #000000 !important;
+          margin-bottom: 6px !important;
+        }
+        h1 em { color: #000000 !important; text-decoration: underline; }
+        .hero-role {
+          font-size: 13pt !important;
+          color: #333333 !important;
+          font-weight: bold !important;
+        }
+        .intro {
+          font-size: 10.5pt !important;
+          color: #333333 !important;
+          max-width: 100% !important;
+        }
+        .hero-right {
+          display: none !important;
+        }
+        section {
+          padding: 16px 0 !important;
+          border-bottom: 1px solid #ccc !important;
+        }
+        .section-head {
+          display: block !important;
+          margin-bottom: 10px !important;
+        }
+        .section-label {
+          color: #000 !important;
+          font-size: 10pt !important;
+        }
+        h2 {
+          font-size: 14pt !important;
+          color: #000 !important;
+        }
+        .section-body {
+          margin-left: 0 !important;
+        }
+        .bio-card, .edu-card, .project-card, .skill-card, .connect-box {
+          background: transparent !important;
+          border: 1px solid #e0e0e0 !important;
+          box-shadow: none !important;
+          padding: 12px !important;
+          margin-bottom: 12px !important;
+          color: #000 !important;
+        }
+        .project-grid {
+          display: block !important;
+        }
+        .project-visual {
+          display: none !important;
+        }
+        .tech-pill, .skill-pill, .edu-course-chip {
+          background: #eee !important;
+          color: #000 !important;
+          border: 1px solid #ccc !important;
+        }
+      }
     </style>
   </head>
   <body>
-    <div class="noise"></div>
+    <div class="noise" aria-hidden="true"></div>
+
     <div class="shell">
+      <!-- Navigation -->
       <nav>
-        <a class="brand" href="#top">DANYIL<span>/</span>KUSHNIR</a>
-        <ul class="nav-links"><li><a href="#about">About</a></li><li><a href="#work">Work</a></li><li><a href="#details">Details</a></li></ul>
-      </nav>
-      <header class="hero" id="top">
-        <div>
-          <div class="eyebrow">Frontend developer · Ukraine</div>
-          <h1>Building clear<br /><em>digital</em> experiences.</h1>
-          <p class="intro">JavaScript and Angular developer focused on interactive products that make complex ideas easier to understand.</p>
-          <div class="contacts"><a href="mailto:kn1b24.kushnir@kpnu.edu.ua">kn1b24.kushnir@kpnu.edu.ua</a><a href="https://github.com/Kushnir-Daniil" target="_blank" rel="noreferrer">GitHub ↗</a></div>
+        <a class="brand" href="#top">
+          <span class="brand-badge">DK</span>
+          <div>DANYIL<span>/</span>KUSHNIR</div>
+        </a>
+
+        <ul class="nav-links">
+          <li>
+            <a href="#about">
+              <span class="lang-ua">Про мене</span>
+              <span class="lang-en">About</span>
+            </a>
+          </li>
+          <li>
+            <a href="#education">
+              <span class="lang-ua">Освіта</span>
+              <span class="lang-en">Education</span>
+            </a>
+          </li>
+          <li>
+            <a href="#work">
+              <span class="lang-ua">Проєкти</span>
+              <span class="lang-en">Projects</span>
+            </a>
+          </li>
+          <li>
+            <a href="#skills">
+              <span class="lang-ua">Навички</span>
+              <span class="lang-en">Skills</span>
+            </a>
+          </li>
+          <li>
+            <a href="#contact">
+              <span class="lang-ua">Контакти</span>
+              <span class="lang-en">Contact</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="nav-actions">
+          <!-- Language Toggle Switcher -->
+          <button class="lang-switch" id="langToggle" title="Змінити мову / Switch language" aria-label="Toggle language">
+            🌐 <span id="langLabelUA" class="active">UA</span> / <span id="langLabelEN">EN</span>
+          </button>
+
+          <!-- Download/Print CV Button -->
+          <button class="btn-cv-print" onclick="window.print()" title="Друк або збереження у PDF / Print or save PDF">
+            📄 <span class="lang-ua">Резюме (PDF)</span><span class="lang-en">CV (PDF)</span>
+          </button>
         </div>
-        <div class="portrait" aria-hidden="true"><div class="portrait-grid"></div></div>
+      </nav>
+
+      <!-- Hero Header Section -->
+      <header class="hero" id="top">
+        <div class="hero-left">
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            <span class="lang-ua">Відкритий до співпраці · Кам'янець-Подільський, Україна</span>
+            <span class="lang-en">Open for Junior roles &amp; Internships · Ukraine</span>
+          </div>
+
+          <!-- Ukrainian Heading -->
+          <div class="lang-ua">
+            <span class="hero-role">Даниїл Кушнір</span>
+            <h1>Frontend-розробник із фокусом на <em>безпеку.</em></h1>
+            <p class="intro">
+              Студент 3-го курсу спеціальності <strong>122 «Комп'ютерні науки»</strong> в КПНУ ім. Івана Огієнка. 
+              Розробляю швидкі, зручні та адаптивні веб-інтерфейси на <strong>JavaScript, TypeScript та Angular</strong>. 
+              Поєдную розробку клієнтських систем із практичними дослідженнями у сфері кіберзахисту.
+            </p>
+          </div>
+
+          <!-- English Heading -->
+          <div class="lang-en">
+            <span class="hero-role">Danyil Kushnir</span>
+            <h1>Frontend Developer with a focus on <em>security.</em></h1>
+            <p class="intro">
+              3rd-year <strong>Computer Science</strong> student at Kamianets-Podilskyi Ivan Ohiienko National University. 
+              Specializing in clean, responsive web apps using <strong>JavaScript, TypeScript, and Angular</strong>, 
+              combining modern UI/UX with solid cyber defense fundamentals.
+            </p>
+          </div>
+
+          <!-- Quick Stats Row -->
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-value">3-й курс</span>
+              <span class="stat-label">
+                <span class="lang-ua">КПНУ, Спец. 122 КН</span>
+                <span class="lang-en">CS Major (122)</span>
+              </span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">Angular &amp; TS</span>
+              <span class="stat-label">
+                <span class="lang-ua">Основний стек</span>
+                <span class="lang-en">Primary Stack</span>
+              </span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">Cyber Defense</span>
+              <span class="stat-label">
+                <span class="lang-ua">Напрям досліджень</span>
+                <span class="lang-en">Research Focus</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Call To Action Buttons -->
+          <div class="hero-cta">
+            <a href="#work" class="btn-primary">
+              <span class="lang-ua">Переглянути проєкти ↓</span>
+              <span class="lang-en">View Projects ↓</span>
+            </a>
+            <button class="copy-email-btn" onclick="copyEmail()" title="Скопіювати email">
+              📋 <span>kn1b24.kushnir@kpnu.edu.ua</span>
+            </button>
+            <a href="https://github.com/Kushnir-Daniil" target="_blank" rel="noreferrer" class="btn-secondary">
+              GitHub ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Right: Photo / Vector Avatar Card -->
+        <div class="hero-right">
+          <div class="portrait-wrapper">
+            <!-- Floating Cyber Badges -->
+            <div class="floating-tag tag-top-left">
+              ⚡ <span>Angular &amp; TypeScript</span>
+            </div>
+            <div class="floating-tag tag-bottom-right">
+              🛡️ <span>Cyber Detective</span>
+            </div>
+
+            <!-- Avatar Card Container -->
+            <div class="portrait-card">
+              <img 
+                src="assets/avatar.svg" 
+                alt="Даниїл Кушнір — Frontend Developer" 
+                class="portrait-img" 
+                width="400" 
+                height="400" 
+                loading="eager"
+              />
+              <div class="portrait-caption">
+                <div>
+                  <div class="portrait-name">Даниїл Кушнір</div>
+                  <div class="portrait-sub">Frontend Dev · KPNU 2026</div>
+                </div>
+                <span class="portrait-badge">VERIFIED</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </header>
     </div>
+
+    <!-- Main Content -->
     <main>
-      <section id="about"><div class="shell">
-        <div class="section-head"><div class="section-label">01 / About</div><h2>Curious about the systems behind the screen — and the people using them.</h2></div>
-        <div class="education"><div><h3>Computer Science, Bachelor’s degree</h3><p>Kamianets-Podilskyi Ivan Ohiienko National University<br />Specialty 122 · Third year</p></div><div class="year">EXPECTED 2028</div></div>
-      </div></section>
-      <section id="work"><div class="shell">
-        <div class="section-head"><div class="section-label">02 / Selected work</div><h2>Learning cybersecurity through decisions, not lectures.</h2></div>
-        <article class="project"><div class="project-title"><div><h3>Cyber Detective</h3><p>An educational cybersecurity app that combines an interactive game with quizzes.</p></div><span class="tag">ANGULAR</span></div><ul><li>Developing for mobile devices and browsers with Angular.</li><li>Designing scenarios around phishing emails, suspicious messages, unsafe links, and weak passwords.</li><li>Building task and quiz mechanics with answer choices and clear explanations.</li></ul></article>
-      </div></section>
-      <section id="details"><div class="shell">
-        <div class="section-head"><div class="section-label">03 / Toolkit</div><h2>Frontend craft, with a growing interest in cyber defense.</h2></div>
-        <div class="grid"><article><h3>Core skills</h3><div class="skill-list"><span>JavaScript</span><span>Angular</span><span>HTML / CSS</span><span>Git</span><span>GitHub</span></div></article><article><h3>Areas of study</h3><p>Cryptography, cybersecurity, and cyber defense — explored through independent study and practical projects.</p></article><article><h3>Research direction</h3><p>Bachelor’s thesis: a crypto-agile system implemented across several programming languages.</p></article><article><h3>Languages</h3><p>Ukrainian — native<br />English — A2</p></article></div>
-      </div></section>
+      <!-- Section: About & Education -->
+      <section id="about">
+        <div class="shell">
+          <div class="section-head">
+            <div class="section-label">01 / <span class="lang-ua">Про мене</span><span class="lang-en">About</span></div>
+            <div>
+              <h2>
+                <span class="lang-ua">Глибше, ніж просто верстка — архітектура, логіка та захист.</span>
+                <span class="lang-en">Beyond plain markup — architecture, logic, and defense.</span>
+              </h2>
+              <p class="section-desc">
+                <span class="lang-ua">Мій шлях поєднує сучасну frontend-інженерію з академічною підготовкою в комп'ютерних науках і прикладній кібербезпеці.</span>
+                <span class="lang-en">Bridging modern client-side engineering with academic computer science and applied cyber defense research.</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="section-body">
+            <div class="bio-card">
+              <p class="lang-ua">
+                Я прагну створювати веб-інтерфейси, які не просто виглядають привабливо, але й працюють блискавично, передбачувано та безпечно. 
+                Маю міцну базу з <strong>JavaScript (ES6+)</strong>, <strong>TypeScript</strong> та компонентного підходу у фреймворку <strong>Angular</strong>. 
+                Мій інтерес до кібербезпеки спонукає мене писати чистий код із врахуванням захисту від XSS, ін'єкцій та вразливостей авторизації.
+              </p>
+              <p class="lang-en">
+                I aim to build interfaces that not only look sleek, but operate fast, predictably, and securely. 
+                With a strong grounding in <strong>JavaScript (ES6+)</strong>, <strong>TypeScript</strong>, and component-driven architecture in <strong>Angular</strong>, 
+                I write maintainable code mindful of XSS, injections, and modern client security practices.
+              </p>
+            </div>
+
+            <!-- Education Box -->
+            <div id="education" class="edu-card">
+              <div>
+                <h3 class="edu-title">
+                  <span class="lang-ua">Бакалавр, Комп'ютерні науки (Спеціальність 122)</span>
+                  <span class="lang-en">Bachelor of Computer Science (Specialty 122)</span>
+                </h3>
+                <div class="edu-uni">
+                  <span class="lang-ua">Кам'янець-Подільський національний університет імені Івана Огієнка (КПНУ)</span>
+                  <span class="lang-en">Kamianets-Podilskyi Ivan Ohiienko National University</span>
+                </div>
+                <div class="edu-details">
+                  <span class="lang-ua">Денна форма навчання · 3-й курс (2022 – 2026 / 2028)</span>
+                  <span class="lang-en">Full-time study · 3rd year (Expected 2026 – 2028)</span>
+                </div>
+                <div class="edu-courses">
+                  <span class="edu-course-chip">Алгоритми та структури даних</span>
+                  <span class="edu-course-chip">Web-програмування</span>
+                  <span class="edu-course-chip">ООП</span>
+                  <span class="edu-course-chip">Комп'ютерні мережі</span>
+                  <span class="edu-course-chip">Бази даних (SQL)</span>
+                  <span class="edu-course-chip">Криптографія та кібербезпека</span>
+                </div>
+              </div>
+              <div class="edu-year">
+                <span class="lang-ua">3-Й КУРС</span>
+                <span class="lang-en">3RD YEAR</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Selected Work / Projects -->
+      <section id="work">
+        <div class="shell">
+          <div class="section-head">
+            <div class="section-label">02 / <span class="lang-ua">Вибрані проєкти</span><span class="lang-en">Selected Work</span></div>
+            <div>
+              <h2>
+                <span class="lang-ua">Навчання кібербезпеці через практичні рішення та інтерактив.</span>
+                <span class="lang-en">Hands-on applications, gamified security, and system architecture.</span>
+              </h2>
+              <p class="section-desc">
+                <span class="lang-ua">Проєкти, розроблені під час навчання та практичних досліджень.</span>
+                <span class="lang-en">Real-world implementations built during studies and research.</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="section-body">
+            <!-- Project 1: Cyber Detective -->
+            <article class="project-card">
+              <div class="project-grid">
+                <div class="project-visual">
+                  <img 
+                    src="assets/project-cyber-detective.svg" 
+                    alt="Cyber Detective — освітня платформа з кібербезпеки" 
+                    width="600" 
+                    height="360" 
+                    loading="lazy"
+                  />
+                </div>
+                <div class="project-content">
+                  <div>
+                    <div class="project-header-top">
+                      <span class="project-meta-tag">ANGULAR · WEB &amp; MOBILE</span>
+                      <span class="edu-year" style="font-size:11px; padding:3px 8px;">2026</span>
+                    </div>
+                    <h3 class="project-title">Cyber Detective</h3>
+                    <p class="project-description">
+                      <span class="lang-ua">Інтерактивний навчальний веб-додаток, який трансформує сухі правила безпеки в захоплюючу гру-симулятор розслідувань.</span>
+                      <span class="lang-en">An interactive educational simulator that turns complex cyber safety rules into an engaging detective investigation game.</span>
+                    </p>
+                    <ul class="project-features">
+                      <li>
+                        <span class="lang-ua">Розробка адаптивного інтерфейсу для мобільних пристроїв та браузерів на <strong>Angular</strong> і <strong>TypeScript</strong>.</span>
+                        <span class="lang-en">Built with <strong>Angular</strong> and <strong>TypeScript</strong> with full mobile and desktop responsiveness.</span>
+                      </li>
+                      <li>
+                        <span class="lang-ua">Сценарії розслідування фішингових листів, небезпечних посилань, шкідливих вкладень та слабких паролів.</span>
+                        <span class="lang-en">Realistic scenarios covering phishing emails, unsafe URLs, suspicious attachments, and credential hygiene.</span>
+                      </li>
+                      <li>
+                        <span class="lang-ua">Механіка квізів, розрахунок балів XP та детальний аналіз зроблених користувачем помилок.</span>
+                        <span class="lang-en">Interactive decision mechanics with instant scoring, XP progression, and actionable security insights.</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <div class="project-tech-stack">
+                      <span class="tech-pill">Angular</span>
+                      <span class="tech-pill">TypeScript</span>
+                      <span class="tech-pill">SCSS</span>
+                      <span class="tech-pill">Web APIs</span>
+                      <span class="tech-pill">Cybersecurity</span>
+                    </div>
+                    <div class="project-links">
+                      <a href="https://github.com/Kushnir-Daniil" target="_blank" rel="noreferrer" class="project-btn">
+                        <span class="lang-ua">Репозиторій на GitHub ↗</span>
+                        <span class="lang-en">GitHub Repository ↗</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 2: Crypto-Agile System -->
+            <article class="project-card">
+              <div class="project-grid">
+                <div class="project-visual">
+                  <img 
+                    src="assets/project-crypto-agile.svg" 
+                    alt="Крипто-гнучка система — бакалаврське дослідження" 
+                    width="600" 
+                    height="360" 
+                    loading="lazy"
+                  />
+                </div>
+                <div class="project-content">
+                  <div>
+                    <div class="project-header-top">
+                      <span class="project-meta-tag">RESEARCH · R&amp;D</span>
+                      <span class="edu-year" style="font-size:11px; padding:3px 8px;">THESIS</span>
+                    </div>
+                    <h3 class="project-title">Crypto-Agile System</h3>
+                    <p class="project-description">
+                      <span class="lang-ua">Тема бакалаврської кваліфікаційної роботи: крос-мовна крипто-гнучка система для динамічної міграції шифрів без простою сервісу.</span>
+                      <span class="lang-en">Bachelor’s thesis research: an agile cryptographic architecture enabling seamless cipher migration across multiple runtimes.</span>
+                    </p>
+                    <ul class="project-features">
+                      <li>
+                        <span class="lang-ua">Дослідження принципів криптографічної гнучкості (Crypto-Agility) у відповідь на появу квантових загроз.</span>
+                        <span class="lang-en">Investigation of crypto-agility principles to address quantum computing threats and outdated algorithms.</span>
+                      </li>
+                      <li>
+                        <span class="lang-ua">Модульна реалізація алгоритмів із можливістю гарячої заміни без порушення сумісності клієнта.</span>
+                        <span class="lang-en">Modular cipher switching architecture maintaining client-side interoperability and low latency.</span>
+                      </li>
+                      <li>
+                        <span class="lang-ua">Порівняльне тестування продуктивності алгоритмів у веб-середовищі (TypeScript) та бекенді.</span>
+                        <span class="lang-en">Benchmarking latency and throughput across TypeScript web environments and backend routines.</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <div class="project-tech-stack">
+                      <span class="tech-pill">TypeScript</span>
+                      <span class="tech-pill">Cryptography</span>
+                      <span class="tech-pill">Post-Quantum</span>
+                      <span class="tech-pill">Cross-Language</span>
+                    </div>
+                    <div class="project-links">
+                      <a href="https://github.com/Kushnir-Daniil" target="_blank" rel="noreferrer" class="project-btn">
+                        <span class="lang-ua">Код та дослідження ↗</span>
+                        <span class="lang-en">Research &amp; Code ↗</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Toolkit & Skills -->
+      <section id="skills">
+        <div class="shell">
+          <div class="section-head">
+            <div class="section-label">03 / <span class="lang-ua">Технічний арсенал</span><span class="lang-en">Toolkit</span></div>
+            <div>
+              <h2>
+                <span class="lang-ua">Стек технологій, інструменти та фундаментальні знання.</span>
+                <span class="lang-en">Core technologies, developer tools, and foundational skills.</span>
+              </h2>
+              <p class="section-desc">
+                <span class="lang-ua">Поєднання сучасної frontend-розробки з основами комп'ютерних наук та кіберзахисту.</span>
+                <span class="lang-en">Combining modern frontend technologies with fundamental computer science and security practices.</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="section-body">
+            <div class="skills-grid">
+              <!-- Card 1: Frontend Development -->
+              <div class="skill-card">
+                <div class="skill-card-head">
+                  <span class="skill-icon">💻</span>
+                  <div>
+                    <h3>
+                      <span class="lang-ua">Frontend розробка</span>
+                      <span class="lang-en">Frontend Craft</span>
+                    </h3>
+                  </div>
+                </div>
+                <div class="skill-pills">
+                  <span class="skill-pill">JavaScript (ES6+)</span>
+                  <span class="skill-pill">TypeScript</span>
+                  <span class="skill-pill">Angular</span>
+                  <span class="skill-pill">HTML5 &amp; CSS3</span>
+                  <span class="skill-pill">SCSS / SASS</span>
+                  <span class="skill-pill">Responsive Design</span>
+                  <span class="skill-pill">REST APIs</span>
+                </div>
+              </div>
+
+              <!-- Card 2: Tools & Workflow -->
+              <div class="skill-card">
+                <div class="skill-card-head">
+                  <span class="skill-icon">🛠️</span>
+                  <div>
+                    <h3>
+                      <span class="lang-ua">Інструменти та робочий процес</span>
+                      <span class="lang-en">Tools &amp; Workflow</span>
+                    </h3>
+                  </div>
+                </div>
+                <div class="skill-pills">
+                  <span class="skill-pill">Git</span>
+                  <span class="skill-pill">GitHub</span>
+                  <span class="skill-pill">VS Code</span>
+                  <span class="skill-pill">npm / Yarn</span>
+                  <span class="skill-pill">Chrome DevTools</span>
+                  <span class="skill-pill">Webpack / Vite</span>
+                  <span class="skill-pill">Figma (UI slice)</span>
+                </div>
+              </div>
+
+              <!-- Card 3: Cyber Defense & CS -->
+              <div class="skill-card">
+                <div class="skill-card-head">
+                  <span class="skill-icon">🛡️</span>
+                  <div>
+                    <h3>
+                      <span class="lang-ua">Кібербезпека та комп'ютерні науки</span>
+                      <span class="lang-en">Cyber Defense &amp; CS</span>
+                    </h3>
+                  </div>
+                </div>
+                <p>
+                  <span class="lang-ua">Основи кіберзахисту, аналіз фішингових атак, криптографічні протоколи, безпека веб-додатків (OWASP), алгоритми та структури даних.</span>
+                  <span class="lang-en">Cyber defense fundamentals, phishing detection, cryptographic protocols, web security basics (OWASP Top 10), data structures and algorithms.</span>
+                </p>
+              </div>
+
+              <!-- Card 4: Languages & Communication -->
+              <div class="skill-card">
+                <div class="skill-card-head">
+                  <span class="skill-icon">🌐</span>
+                  <div>
+                    <h3>
+                      <span class="lang-ua">Мови та комунікація</span>
+                      <span class="lang-en">Languages</span>
+                    </h3>
+                  </div>
+                </div>
+                <div style="display:grid; gap:8px;">
+                  <div>
+                    <strong style="color:var(--green);">Українська</strong> — 
+                    <span class="lang-ua">рідна мова (Native)</span>
+                    <span class="lang-en">Native</span>
+                  </div>
+                  <div>
+                    <strong style="color:var(--green);">English</strong> — 
+                    <span class="lang-ua">A2 / B1 (читання технічної документації, базова комунікація)</span>
+                    <span class="lang-en">A2 / B1 (Technical documentation reading, developer communication)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Contact / Connect -->
+      <section id="contact">
+        <div class="shell">
+          <div class="connect-box">
+            <div class="connect-info">
+              <h3>
+                <span class="lang-ua">Готові поспілкуватися?</span>
+                <span class="lang-en">Let’s build something together.</span>
+              </h3>
+              <p>
+                <span class="lang-ua">Відкритий до пропозицій щодо стажування, junior-позицій та цікавих веб-проєктів. Напишіть мені або збережіть резюме.</span>
+                <span class="lang-en">Open for internships, junior frontend roles, and innovative web projects. Reach out via email or save my resume.</span>
+              </p>
+            </div>
+            <div class="connect-buttons">
+              <a href="mailto:kn1b24.kushnir@kpnu.edu.ua" class="btn-primary">
+                ✉️ <span class="lang-ua">Написати листа</span><span class="lang-en">Send Email</span>
+              </a>
+              <button class="btn-secondary" onclick="copyEmail()">
+                📋 <span class="lang-ua">Скопіювати Email</span><span class="lang-en">Copy Email</span>
+              </button>
+              <button class="btn-cv-print" onclick="window.print()">
+                📄 <span class="lang-ua">Друк / PDF CV</span><span class="lang-en">Print / PDF CV</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
-    <div class="shell"><footer><span>Kamianets-Podilskyi, Ukraine</span><a href="mailto:kn1b24.kushnir@kpnu.edu.ua">Let’s connect →</a><span>© 2026 Danyil Kushnir</span></footer></div>
+
+    <!-- Footer -->
+    <div class="shell">
+      <footer>
+        <div>
+          <span>📍 </span>
+          <span class="lang-ua">Кам'янець-Подільський, Україна</span>
+          <span class="lang-en">Kamianets-Podilskyi, Ukraine</span>
+          <span> · КПНУ ім. І. Огієнка</span>
+        </div>
+        <div>
+          <a href="https://github.com/Kushnir-Daniil" target="_blank" rel="noreferrer">github.com/Kushnir-Daniil ↗</a>
+        </div>
+        <div>
+          <span>© 2026 Danyil Kushnir. </span>
+          <span class="lang-ua">Всі права захищено.</span>
+          <span class="lang-en">All rights reserved.</span>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Toast Notification for Email Copy -->
+    <div id="toast" role="alert" aria-live="polite">✓ Email скопійовано в буфер!</div>
+
+    <!-- Script: Language Switcher, Email Copy, Interactivity -->
+    <script>
+      // Email copy with toast
+      function copyEmail() {
+        const email = "kn1b24.kushnir@kpnu.edu.ua";
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(email).then(showToast);
+        } else {
+          // Fallback
+          const ta = document.createElement("textarea");
+          ta.value = email;
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand("copy");
+          document.body.removeChild(ta);
+          showToast();
+        }
+      }
+
+      function showToast() {
+        const toast = document.getElementById("toast");
+        const isUA = document.documentElement.lang === "uk";
+        toast.textContent = isUA ? "✓ Email скопійовано: kn1b24.kushnir@kpnu.edu.ua" : "✓ Email copied: kn1b24.kushnir@kpnu.edu.ua";
+        toast.classList.add("show");
+        setTimeout(() => {
+          toast.classList.remove("show");
+        }, 2600);
+      }
+
+      // Language Switcher Logic (UA / EN)
+      const langToggle = document.getElementById("langToggle");
+      const labelUA = document.getElementById("langLabelUA");
+      const labelEN = document.getElementById("langLabelEN");
+
+      function setLanguage(lang) {
+        document.documentElement.lang = lang;
+        if (lang === "uk") {
+          labelUA.classList.add("active");
+          labelEN.classList.remove("active");
+          localStorage.setItem("danyil_cv_lang", "uk");
+        } else {
+          labelEN.classList.add("active");
+          labelUA.classList.remove("active");
+          localStorage.setItem("danyil_cv_lang", "en");
+        }
+      }
+
+      // Initialize language from stored preference or default to uk
+      const savedLang = localStorage.getItem("danyil_cv_lang") || "uk";
+      setLanguage(savedLang);
+
+      langToggle.addEventListener("click", () => {
+        const currentLang = document.documentElement.lang;
+        setLanguage(currentLang === "uk" ? "en" : "uk");
+      });
+    </script>
   </body>
 </html>

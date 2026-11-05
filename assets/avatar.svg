@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a261e"/>
+      <stop offset="50%" stop-color="#071612"/>
+      <stop offset="100%" stop-color="#05100c"/>
+    </linearGradient>
+
+    <linearGradient id="cyberGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b6ff55" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#34d399" stop-opacity="0.8"/>
+    </linearGradient>
+
+    <radialGradient id="halo" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#b6ff55" stop-opacity="0.25"/>
+      <stop offset="60%" stop-color="#10b981" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#071612" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="hoodieGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a3b30"/>
+      <stop offset="50%" stop-color="#102720"/>
+      <stop offset="100%" stop-color="#0a1a15"/>
+    </linearGradient>
+
+    <linearGradient id="skinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffdfc4"/>
+      <stop offset="100%" stop-color="#f0be9b"/>
+    </linearGradient>
+
+    <linearGradient id="hairGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2d3748"/>
+      <stop offset="100%" stop-color="#1a202c"/>
+    </linearGradient>
+
+    <filter id="neonBlur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <pattern id="gridPattern" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(182, 255, 85, 0.08)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="400" height="400" fill="url(#bgGrad)" rx="24"/>
+  <rect width="400" height="400" fill="url(#gridPattern)" rx="24"/>
+  <circle cx="200" cy="180" r="170" fill="url(#halo)"/>
+
+  <!-- Code / Cyber Ambient Elements in Background -->
+  <g opacity="0.35" font-family="'Courier New', monospace" font-size="11" fill="#b6ff55">
+    <text x="24" y="50">&lt;dev&gt;</text>
+    <text x="24" y="70">const role = "Frontend";</text>
+    <text x="24" y="90">const focus = "Angular &amp; Security";</text>
+    <text x="310" y="50">01001001</text>
+    <text x="305" y="70">01010100</text>
+    <text x="290" y="330">&lt;/engineer&gt;</text>
+  </g>
+
+  <!-- Ambient Circle Frame -->
+  <circle cx="200" cy="190" r="145" fill="none" stroke="rgba(182, 255, 85, 0.18)" stroke-width="1.5" stroke-dasharray="8 6"/>
+  <circle cx="200" cy="190" r="130" fill="none" stroke="rgba(52, 211, 153, 0.25)" stroke-width="1"/>
+
+  <!-- Character Artwork -->
+  <!-- Shoulders & Hoodie -->
+  <g id="body">
+    <!-- Back Collar -->
+    <path d="M140 270 Q200 290 260 270 L265 295 Q200 315 135 295 Z" fill="#0d211a"/>
+    <!-- Main Hoodie Torso -->
+    <path d="M70 400 L115 285 Q150 265 200 265 Q250 265 285 285 L330 400 Z" fill="url(#hoodieGrad)"/>
+    <!-- Hoodie Chest Seams & Zipper Line -->
+    <path d="M198 275 L198 400" stroke="#b6ff55" stroke-opacity="0.3" stroke-width="2"/>
+    <path d="M202 275 L202 400" stroke="#0a1a15" stroke-width="2"/>
+    <!-- Hoodie Strings -->
+    <path d="M175 285 Q172 320 170 340" stroke="#b6ff55" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path d="M225 285 Q228 320 230 340" stroke="#b6ff55" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <circle cx="170" cy="342" r="3" fill="#b6ff55"/>
+    <circle cx="230" cy="342" r="3" fill="#b6ff55"/>
+    <!-- Collar Front -->
+    <path d="M150 275 Q200 305 250 275 L235 260 Q200 275 165 260 Z" fill="#143026"/>
+  </g>
+
+  <!-- Neck -->
+  <path d="M172 230 L172 270 Q200 282 228 270 L228 230 Z" fill="#e5ab87"/>
+  <path d="M185 240 Q200 252 215 240 L215 265 Q200 272 185 265 Z" fill="#d99b75" opacity="0.6"/>
+
+  <!-- Head / Face -->
+  <g id="head">
+    <!-- Ears -->
+    <ellipse cx="138" cy="188" rx="10" ry="16" fill="#f0be9b"/>
+    <ellipse cx="138" cy="188" rx="6" ry="10" fill="#d99b75"/>
+    <ellipse cx="262" cy="188" rx="10" ry="16" fill="#f0be9b"/>
+    <ellipse cx="262" cy="188" rx="6" ry="10" fill="#d99b75"/>
+
+    <!-- Face Contour -->
+    <path d="M142 165 C142 225 165 255 200 255 C235 255 258 225 258 165 C258 120 235 110 200 110 C165 110 142 120 142 165 Z" fill="url(#skinGrad)"/>
+
+    <!-- Hair (Back/Base) -->
+    <path d="M136 155 Q135 110 170 95 Q200 85 235 95 Q265 110 264 155 Q250 120 230 115 Q200 112 168 118 Q148 125 136 155 Z" fill="url(#hairGrad)"/>
+    
+    <!-- Modern Stylish Hair Bangs -->
+    <path d="M138 140 C145 105 180 90 205 92 C235 94 262 108 262 135 C250 120 230 112 210 112 C185 112 165 125 148 142 Z" fill="#1f2937"/>
+    <path d="M152 115 C175 98 220 96 248 112 C230 106 205 104 185 108 C170 111 158 118 152 115 Z" fill="#374151"/>
+
+    <!-- Eyebrows -->
+    <path d="M160 162 Q175 156 188 160" stroke="#1f2937" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    <path d="M212 160 Q225 156 240 162" stroke="#1f2937" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Eyes -->
+    <ellipse cx="174" cy="174" rx="7" ry="4.5" fill="#1f2937"/>
+    <ellipse cx="226" cy="174" rx="7" ry="4.5" fill="#1f2937"/>
+    <circle cx="172" cy="172" r="1.8" fill="#ffffff"/>
+    <circle cx="224" cy="172" r="1.8" fill="#ffffff"/>
+
+    <!-- Tech Glasses (Modern subtle frame) -->
+    <g id="glasses">
+      <rect x="156" y="163" width="34" height="22" rx="6" fill="rgba(182, 255, 85, 0.08)" stroke="#b6ff55" stroke-width="2"/>
+      <rect x="210" y="163" width="34" height="22" rx="6" fill="rgba(182, 255, 85, 0.08)" stroke="#b6ff55" stroke-width="2"/>
+      <path d="M190 171 L210 171" stroke="#b6ff55" stroke-width="2"/>
+      <path d="M156 170 L140 172" stroke="#b6ff55" stroke-width="1.8"/>
+      <path d="M244 170 L260 172" stroke="#b6ff55" stroke-width="1.8"/>
+      <!-- Lens glare -->
+      <path d="M160 166 L175 166 L165 180 Z" fill="rgba(255, 255, 255, 0.25)"/>
+      <path d="M214 166 L229 166 L219 180 Z" fill="rgba(255, 255, 255, 0.25)"/>
+    </g>
+
+    <!-- Nose -->
+    <path d="M198 178 Q202 192 195 198 L203 198" stroke="#d99b75" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+    <!-- Smile -->
+    <path d="M185 218 Q200 228 215 218" stroke="#c27d54" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  </g>
+
+  <!-- Developer Headset / Audio detail -->
+  <g id="headset" opacity="0.95">
+    <path d="M136 182 C133 155 145 118 200 116 C255 118 267 155 264 182" fill="none" stroke="#22c55e" stroke-width="4.5" stroke-linecap="round"/>
+    <!-- Left Ear Cup -->
+    <rect x="128" y="172" width="12" height="30" rx="5" fill="#143026" stroke="#b6ff55" stroke-width="1.5"/>
+    <!-- Right Ear Cup -->
+    <rect x="260" y="172" width="12" height="30" rx="5" fill="#143026" stroke="#b6ff55" stroke-width="1.5"/>
+    <!-- Mic boom -->
+    <path d="M134 195 Q136 220 165 224" fill="none" stroke="#b6ff55" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="167" cy="224" r="3.5" fill="#b6ff55" filter="url(#neonBlur)"/>
+  </g>
+
+  <!-- Floating Badges in Front of Portrait -->
+  <!-- Status Badge Left -->
+  <g transform="translate(25, 310)">
+    <rect width="130" height="36" rx="18" fill="rgba(13, 33, 26, 0.85)" stroke="#b6ff55" stroke-width="1.2"/>
+    <circle cx="18" cy="18" r="5" fill="#b6ff55" filter="url(#neonBlur)"/>
+    <circle cx="18" cy="18" r="3" fill="#ffffff"/>
+    <text x="32" y="22" font-family="'DM Mono', monospace" font-size="11" font-weight="700" fill="#f4f7f5" letter-spacing="0.05em">OPEN TO WORK</text>
+  </g>
+
+  <!-- Tech Stack Badge Right -->
+  <g transform="translate(245, 310)">
+    <rect width="130" height="36" rx="18" fill="rgba(13, 33, 26, 0.85)" stroke="#34d399" stroke-width="1.2"/>
+    <text x="20" y="22" font-family="'DM Mono', monospace" font-size="11" font-weight="700" fill="#34d399">⚡ ANGULAR &amp; TS</text>
+  </g>
+
+  <!-- Outer Border Frame -->
+  <rect x="2" y="2" width="396" height="396" rx="22" fill="none" stroke="rgba(182, 255, 85, 0.3)" stroke-width="2"/>
+</svg>
